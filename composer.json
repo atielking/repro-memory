@@ -1,0 +1,19 @@
+{
+  "require": {
+    "hhvm/hhvm-autoload": "^2.0.13"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "find vendor -type d -name tests -or -name docs | xargs -n1 rm -rf",
+      "rm -f vendor/composer/*.php",
+      "rm -f vendor/autoload.php",
+      "rm -f vendor/hhvm/hhvm-autoload/ComposerPlugin.php"
+    ],
+    "post-update-cmd": [
+      "find vendor -type d -name tests -or -name docs | xargs -n1 rm -rf",
+      "rm -f vendor/composer/*.php",
+      "rm -f vendor/autoload.php",
+      "rm -f vendor/hhvm/hhvm-autoload/ComposerPlugin.php"
+    ]
+  }
+}
